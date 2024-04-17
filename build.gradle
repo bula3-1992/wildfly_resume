@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    maven { url "https://mavensync.zkoss.org/maven2" }
+    maven { url "https://mavensync.zkoss.org/eval" }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation "org.zkoss.zk:zk:${zkVersion}"
+    implementation 'org.zkoss.common:zcommon:${zk.version}'
+    implementation "org.zkoss.zk:zkbind:${zkVersion}"
+//    implementation "org.zkoss.zk:zkex:${zkVersion}"    /*ZK PE*/
+//    implementation "org.zkoss.zk:zkmax:${zkVersion}"   /*ZK EE*/
+//    implementation "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
+
+    implementation "commons-io:commons-io:${commonsIoVersion}"
+    runtimeOnly "org.slf4j:slf4j-jdk14:1.7.28"
+
+    testImplementation "org.zkoss.zats:zats-mimic-ext96:${zatsVersion}"
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
