@@ -11,4 +11,5 @@ import org.zkoss.zk.ui.http.DHtmlLayoutServlet;
 //@WebContext(contextRoot = "/SWS", urlPattern = "/SampleWS")
 public class WFResume {
     DHtmlLayoutServlet dd;
+
 }

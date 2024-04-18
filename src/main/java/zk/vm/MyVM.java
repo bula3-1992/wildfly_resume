@@ -2,6 +2,7 @@ package zk.vm;
 
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;
+
 public class MyVM {
     public static final String SUBMIT_COMMAND = "submit";
     private String name = "";
