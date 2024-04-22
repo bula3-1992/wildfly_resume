@@ -54,7 +54,6 @@ public class AddressServiceImpl implements AddressService{
 	
 	public List<Address> search(String keyword){
 		addressList = findAll();
-		log.info("BULAT GOT FROM MYSQL :" + addressList.size());
 		List<Address> result = new LinkedList<Address>();
 		if (keyword==null || "".equals(keyword)){
 			result = addressList;

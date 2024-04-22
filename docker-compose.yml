@@ -4,12 +4,10 @@ services:
     container_name: "wfly-db"
     image: mysql:latest
     restart: unless-stopped
-    networks:
-      - wfly
+#    networks:
+#      - wfly
     ports:
       - "3306:3306"
-#    volumes:
-#      - ./init.sql:/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: asdf
       MYSQL_DATABASE: mydb
@@ -21,25 +19,10 @@ services:
     ports:
       - "8080:8080"
       - "9990:9990"
-    networks:
-      - wfly
+#    networks:
+#      - wfly
     build:
       dockerfile: Dockerfile
-#  myservice-jetty:
-#    container_name: "myservice-jetty"
-#    image: myservice-jetty:1.0
-#    networks:
-#      - myservice
-#    environment:
-#      - LANG=C.UTF-8
-#      - LC_ALL=C.UTF-8
-#      - TZ=Europe/Moscow
-#      - DIST_DIR
-#    volumes:
-#      - ${DIST_DIR}/myservice-core.war:/var/lib/jetty/webapps/myservice-core.war:ro
-#      - ${DIST_DIR}/myservice.war:/var/lib/jetty/webapps/myservice.war:ro
-#      - ${DIST_DIR}/myservice:/usr/local/jetty/app_home/myservice/conf
-#      - ${DIST_DIR}/myservice-core:/usr/local/jetty/app_home/myservice-core/conf
-networks:
-  wfly:
-    driver: bridge
+#networks:
+#  wfly:
+#    driver: bridge
