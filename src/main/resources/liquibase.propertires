@@ -1,0 +1,5 @@
+changeLogFile=./src/main/resources/db/changelog.xml
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://127.0.0.1:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+username=user
+password=pw

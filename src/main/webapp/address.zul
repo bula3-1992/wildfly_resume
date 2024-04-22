@@ -1,0 +1,32 @@
+<window title="Address" width="600px" border="normal">
+	<div>
+		Keyword:
+		<textbox id="keywordBox" />
+		<button id="searchButton" label="Search" image="/img/search.png" />
+	</div>
+	<listbox id="addressListbox" rows="3" emptyMessage="No address found in the result">
+		<listhead>
+			<listheader label="Index" />
+			<listheader label="City" />
+			<listheader label="Street" width="20%"/>
+			<listheader label="Number" />
+			<listheader label="Apt" />
+		</listhead>
+	    <listitem>
+	        <listcell label="address index"></listcell>
+	        <listcell label="city"></listcell>
+			<listcell label="street"></listcell>
+			<listcell label="number"></listcell>
+			<listcell label="apt"></listcell>
+	    </listitem>
+	</listbox>
+	<hlayout style="margin-top:20px" width="100%">
+		<vlayout hflex="1">
+			<label id="indexLabel" />
+			<label id="cityLabel" />
+			<label id="streetLabel" />
+			<label id="numberLabel" />
+			<label id="aptLabel" />
+		</vlayout>
+	</hlayout>
+</window>

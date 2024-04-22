@@ -1,4 +1,4 @@
-<?import zk.vm.MyVM?>
+<?import zk.ent.MyVM?>
 <zk>
 	<div viewModel="@id('vm') @init('MyVM')" validationMessages="@id('vmsgs')">
 		Your Name: <textbox id="name" value="@bind(vm.name)"

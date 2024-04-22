@@ -1,7 +1,19 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.liquibase:liquibase-gradle-plugin:2.2.0"
+    }
+}
+
 plugins {
     id 'java'
     id 'war'
+    id 'org.liquibase.gradle' version '2.2.0'
 }
+
+apply plugin: 'org.liquibase.gradle'
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
@@ -22,7 +34,14 @@ dependencies {
 //    implementation "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
 
     implementation "commons-io:commons-io:${commonsIoVersion}"
+
     runtimeOnly "org.slf4j:slf4j-jdk14:1.7.28"
+
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.24.0'
+    liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:2.1.1'
+    liquibaseRuntime 'info.picocli:picocli:4.7.5'
+    liquibaseRuntime 'org.yaml:snakeyaml:1.33'
+    liquibaseRuntime 'mysql:mysql-connector-java:8.0.30'
 
     testImplementation "org.zkoss.zats:zats-mimic-ext96:${zatsVersion}"
 
@@ -33,3 +52,25 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+task('deploy changeLog') {
+    doFirst() {
+        liquibase {
+            activities {
+                main {
+                    File propsFile = new File("${project.rootDir}/src/main/resources/liquibase.propertires")
+                    Properties properties = new Properties()
+                    properties.load(new FileInputStream(propsFile))
+                    changeLogFile properties['changeLogFile']
+                    url properties['url']
+                    username properties['username']
+                    password properties['password']
+                    classpath "${project.rootDir}/src/main/resources"
+                }
+            }
+        }
+    }
+}
+update.dependsOn('deploy changeLog')
+

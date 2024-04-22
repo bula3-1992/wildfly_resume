@@ -1,4 +1,4 @@
-package zk.vm;
+package zk.ent;
 
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;

@@ -8,6 +8,8 @@ services:
       - wfly
     ports:
       - "3306:3306"
+#    volumes:
+#      - ./init.sql:/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: asdf
       MYSQL_DATABASE: mydb
