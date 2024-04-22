@@ -41,7 +41,7 @@ dependencies {
     liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:2.1.1'
     liquibaseRuntime 'info.picocli:picocli:4.7.5'
     liquibaseRuntime 'org.yaml:snakeyaml:1.33'
-    liquibaseRuntime 'mysql:mysql-connector-java:8.0.30'
+    implementation 'mysql:mysql-connector-java:8.0.30'
 
     testImplementation "org.zkoss.zats:zats-mimic-ext96:${zatsVersion}"
 

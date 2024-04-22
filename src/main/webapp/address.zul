@@ -1,8 +1,8 @@
-<window title="Address" width="600px" border="normal">
+<window title="Address" width="600px" border="normal" apply="zk.cont.AddressController">
 	<div>
 		Keyword:
 		<textbox id="keywordBox" />
-		<button id="searchButton" label="Search" image="/img/search.png" />
+		<button id="searchButton" label="Search"/>
 	</div>
 	<listbox id="addressListbox" rows="3" emptyMessage="No address found in the result">
 		<listhead>
@@ -12,13 +12,15 @@
 			<listheader label="Number" />
 			<listheader label="Apt" />
 		</listhead>
-	    <listitem>
-	        <listcell label="address index"></listcell>
-	        <listcell label="city"></listcell>
-			<listcell label="street"></listcell>
-			<listcell label="number"></listcell>
-			<listcell label="apt"></listcell>
-	    </listitem>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.index}"/>
+				<listcell label="${each.city}"/>
+				<listcell label="${each.street}"/>
+				<listcell label="${each.homeNumber}"/>
+				<listcell label="${each.apartment}"/>
+			</listitem>
+		</template>
 	</listbox>
 	<hlayout style="margin-top:20px" width="100%">
 		<vlayout hflex="1">

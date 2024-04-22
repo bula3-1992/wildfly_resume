@@ -1,11 +1,7 @@
-<?import zk.ent.MyVM?>
-<zk>
-	<div viewModel="@id('vm') @init('MyVM')" validationMessages="@id('vmsgs')">
-		Your Name: <textbox id="name" value="@bind(vm.name)"
-			onOK="@command(MyVM.SUBMIT_COMMAND)"/>
-		<button id="submit" label="submit"
-			onClick='@command(MyVM.SUBMIT_COMMAND)'/>
-		<separator/>
-		<label id="response" value="@load(vm.response)"/>
-	</div>
-</zk>
+<window title="My First ZK Application" border="normal">
+	Hello World!
+	<html><![CDATA[ <br/>]]></html>
+	<a href="address.zul">address.zul</a>
+	<html><![CDATA[ <br/>]]></html>
+	<a href="hellp.zul">hellp.zul</a>
+</window>
