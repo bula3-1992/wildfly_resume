@@ -25,7 +25,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation 'org.hibernate.javax.persistence:hibernate-jpa-2.2-api:1.0.0.Beta1'
+    implementation 'org.hibernate:hibernate-core:5.3.2.Final'
+    implementation 'javax.xml.bind:jaxb-api:2.2.11'
     implementation "org.zkoss.zk:zk:${zkVersion}"
     implementation 'org.zkoss.common:zcommon:${zk.version}'
     implementation "org.zkoss.zk:zkbind:${zkVersion}"
@@ -73,5 +75,6 @@ task('deploy changeLog') {
         }
     }
 }
+//compileJava.dependsOn(processResources)
 update.dependsOn('deploy changeLog')
 

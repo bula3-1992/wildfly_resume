@@ -1,12 +1,23 @@
 package zk.ent;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "address")
 public class Address {
 
+    @Id
+//    @GeneratedValue
     private int id;
+    @Column(name = "_index")
     private String index;
+    @Column(name = "city")
     private String city;
+    @Column(name = "street")
     private String street;
+    @Column(name = "home_number")
     private String homeNumber;
+    @Column(name = "apartment")
     private String apartment;
 
     public Address() {
